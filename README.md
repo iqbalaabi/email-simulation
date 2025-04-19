@@ -5,13 +5,13 @@ This branch contains the implementation of real time email messaging in a thread
 Follow these Steps:
 
 
-##Local setup
+## Local setup
 
 1- git clone
 
 2- Run composer install
 
-3- Give the input file in `email-simulation/app/Console/Commands/SendLegalEmails.php` Set the value of `INPUT_DOCX_FILE_PATH'
+3- In the  file `email-simulation/app/Console/Commands/SendLegalEmails.php` Set the value of `INPUT_DOCX_FILE_PATH', SENDER_A, SENDER_B
 
 4- Run php artisan serve
 
