@@ -5,7 +5,8 @@ This branch contains the implementation of real time email messaging in a thread
 Follow these Steps:
 
 
-Local setup
+##Local setup
+
 1- git clone
 
 2- Run composer install
