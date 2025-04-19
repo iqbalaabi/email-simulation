@@ -48,7 +48,7 @@ class LegalPdfController extends Controller
 
     public function generate($threadId)
     {
-        ini_set('memory_limit', '1024M');
+        ini_set('memory_limit', '4096M');
         ini_set('max_execution_time', 0);
         $gmail = (new GmailService())->getGmailService();
         $thread = $gmail->users_threads->get('me', $threadId);
