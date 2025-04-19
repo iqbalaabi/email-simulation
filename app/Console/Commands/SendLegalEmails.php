@@ -10,23 +10,23 @@ class SendLegalEmails extends Command
 {
     protected $signature = 'legalpdf:send-thread';
     protected $description = 'Send 25 back-and-forth real emails in a single Gmail thread';
+    const INPUT_DOCX_FILE_PATH = 'app/file-1mb.docx';
+    const SENDER_A='';
+    const SENDER_B = '';
 
     public function handle()
     {
         $gmailService = new GmailService();
         $gmail = $gmailService->getGmailService();
 
-        $senderA = 'iqbal.shaheen0101@gmail.com';   // replace with yours
-        $senderB = 'itlabgacjpb@gmail.com';  // replace with yours
-        $subject = 'Legal Discussion: Threaded Chain';
-
         // Load .docx and extract full content
-        $docxPath = storage_path('app/file-1mb.docx');
+        $docxPath = storage_path(self::INPUT_DOCX_FILE_PATH);
         $text = $this->extractFullDocxText($docxPath);
 
         // First email: from A to B
-        $from = $senderA;
-        $to = $senderB;
+        $from = self::SENDER_A;
+        $to = self::SENDER_B;
+        $subject = 'Legal Discussion: Threaded Chain';
 
         $this->info('Sending first email...');
 
